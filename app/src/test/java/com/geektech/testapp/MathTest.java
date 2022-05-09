@@ -58,6 +58,16 @@ public class MathTest {
         assertEquals("делить не четное на четное нельзя", math.divide("13", "6"));
     }
 
+    @Test
+    public void simplemulty(){
+        assertEquals("20", math.divide("10", "2"));
+    }
+
+    @Test
+    public void simpleminus(){
+        assertEquals("6", math.divide("12", "6"));
+    }
+
     @After
     public void detach(){
     math = null;

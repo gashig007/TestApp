@@ -15,6 +15,8 @@ private ActivityMainBinding binding;
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         plusUI();
+        minusUI();
+        multyUI();
         divideUI();
     }
 
@@ -26,6 +28,32 @@ private ActivityMainBinding binding;
                 String num1 = binding.num1Ed.getText().toString();
                 String num2 = binding.num2Ed.getText().toString();
                 String result = math.add(num1, num2);
+                binding.resultTv.setText(result);
+            }
+        });
+    }
+
+    private void minusUI() {
+        binding.okBtnMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Math math = new Math();
+                String num1 = binding.num1Ed.getText().toString();
+                String num2 = binding.num2Ed.getText().toString();
+                String result = math.minus(num1, num2);
+                binding.resultTv.setText(result);
+            }
+        });
+    }
+
+    private void multyUI() {
+        binding.okBtnMulti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Math math = new Math();
+                String num1 = binding.num1Ed.getText().toString();
+                String num2 = binding.num2Ed.getText().toString();
+                String result = math.multy(num1, num2);
                 binding.resultTv.setText(result);
             }
         });

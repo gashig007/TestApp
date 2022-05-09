@@ -27,11 +27,26 @@ public class MainActivityTest {
     }
 
     @Test
+    public void minusCase (){
+        onView(withId(R.id.num1_ed)).perform(typeText("13"));
+        onView(withId(R.id.num2_ed)).perform(typeText("8"));
+        onView(withId(R.id.ok_btn_plus)).perform(click());
+        onView(withId(R.id.result_tv)).check(matches(withText("5")));
+    }
+
+    @Test
+    public void multyCase (){
+        onView(withId(R.id.num1_ed)).perform(typeText("5"));
+        onView(withId(R.id.num2_ed)).perform(typeText("4"));
+        onView(withId(R.id.ok_btn_plus)).perform(click());
+        onView(withId(R.id.result_tv)).check(matches(withText("20")));
+    }
+
+    @Test
     public void divide(){
         onView(withId(R.id.num1_ed)).perform(typeText("20"));
         onView(withId(R.id.num2_ed)).perform(typeText("4"));
         onView(withId(R.id.ok_btn_divide)).perform(click());
         onView(withId(R.id.result_tv)).check(matches(withText("5")));
     }
-
 }
