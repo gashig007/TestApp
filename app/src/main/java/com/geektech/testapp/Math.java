@@ -65,18 +65,17 @@ public class Math {
         else if (a.isEmpty() || b.isEmpty()) {
             return "Пусто";
         }
-        else if (isNumeric(a) || isNumeric(b)) {
-            int num1 = Integer.parseInt(a);
-            int num2 = Integer.parseInt(b);
-
-            result = String.valueOf(num1 / num2);
-        }
         else if (Integer.parseInt(a) % 2 == 0 && Integer.parseInt(b) % 2 == 1){
             result = "делить нельзя";
         }
         else if (Integer.parseInt(b) % 2 == 0 && Integer.parseInt(a) % 2 == 1){
             result = "делить нельзя";
-        } else {
+        } else if (isNumeric(a) || isNumeric(b)) {
+            int num1 = Integer.parseInt(a);
+            int num2 = Integer.parseInt(b);
+
+            result = String.valueOf(num1 / num2);
+        }else {
             result = "Буквы нельзя";
             System.out.println("Буквы нельзя");
         }
