@@ -61,12 +61,7 @@ public class Math {
         if (b.equals("0") || a.equals("0")) {
             result = "на ноль нельзя";
         }
-        else if (Integer.parseInt(a) % 2 == 0 && Integer.parseInt(b) % 2 == 1){
-            result = "делить нельзя";
-        }
-        else if (Integer.parseInt(b) % 2 == 0 && Integer.parseInt(a) % 2 == 1){
-            result = "делить нельзя";
-        }
+
         else if (a.isEmpty() || b.isEmpty()) {
             return "Пусто";
         }
@@ -75,6 +70,12 @@ public class Math {
             int num2 = Integer.parseInt(b);
 
             result = String.valueOf(num1 / num2);
+        }
+        else if (Integer.parseInt(a) % 2 == 0 && Integer.parseInt(b) % 2 == 1){
+            result = "делить нельзя";
+        }
+        else if (Integer.parseInt(b) % 2 == 0 && Integer.parseInt(a) % 2 == 1){
+            result = "делить нельзя";
         } else {
             result = "Буквы нельзя";
             System.out.println("Буквы нельзя");
